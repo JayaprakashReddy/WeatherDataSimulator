@@ -1,0 +1,21 @@
+
+Design Considerations
+
+-->Fake Weather Data Generation with consideration of atmosphere,
+ topography, geography,oceanography, or similar
+-->Documentation
+-->TestCases
+
+use seperate class for each element ( topography, geography )
+Use trait to define such element
+Use configuration file to configure bounds for temperature etc
+Make it reusable to generate realworld data
+Use class level documentation  to make it more readable
+Pass parameters to define how the data to be generated eg: number of records, number of stations, period , dataset size etc;
+
+Questions
+
+--> Input to progam would be a file with list of locations/weather stations (eg: SYDNEY )and the program will generate fake weather data
+for them for the configured duration with a gap of configured period.
+--> I believe I dont have to hit any external weather APIs to generate data, as I understand it is fake/simulated data with
+close resemblance to plausible data

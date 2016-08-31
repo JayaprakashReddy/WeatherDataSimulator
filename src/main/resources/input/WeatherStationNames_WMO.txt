@@ -1,0 +1,13 @@
+#LOCATION NAME|WMO CODE
+Adelaide|94672
+Albany|94802
+Albury|94896
+Alice Springs|94326
+Sydney|94767
+Melbourne|94866
+Canberra|94926
+Perth|94610
+Darwin|94120
+Brisbane|94578
+Hobart|94975
+Bankstown|94765
