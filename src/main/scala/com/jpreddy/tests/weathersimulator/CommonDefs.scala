@@ -3,6 +3,10 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import com.typesafe.config.ConfigFactory
 import com.typesafe.config.Config
+
+/**
+ * All the common definitions and configurations are defined here
+ */
 object CommonDefs {
   
   //statics

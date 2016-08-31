@@ -1,6 +1,11 @@
 package com.jpreddy.tests.weathersimulator.datamodel
 import com.jpreddy.tests.weathersimulator.CommonDefs._
 import scala.util.regexp._
+
+/**
+ * The static data related to WeatherElements is captured here
+ */
+
 object WeatherElementModel {
  
   class AtmosphericWeatherElement(val name:String,

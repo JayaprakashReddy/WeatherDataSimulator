@@ -3,6 +3,9 @@ package com.jpreddy.tests.weathersimulator.datamodel
 import scala.collection.mutable.ListBuffer
 import com.jpreddy.tests.weathersimulator.utils.TransformationUtil
 
+/**
+ * All the WeatherDataModel classes are here
+ */
 case class WeatherStation(label:String,wmo :String)
 case class GeographyModel(latitude: Float, longitude: Float, elevation: Float, timeZone: String="")
 object GeographyModel{

@@ -6,6 +6,12 @@ import com.jpreddy.tests.weathersimulator.datamodel._
 import com.jpreddy.tests.weathersimulator.datagen._
 import com.jpreddy.tests.weathersimulator.utils.FileIOUtil._
 
+/**
+ * This class encapsulates  whole of the application functionality.
+ * 1.Loads the input stations file
+ * 2.Generates weather data for them
+ * 3.Writes the weather data to output file
+ */
 object WeatherDataSimulator {
   
   def loadWeatherStations(wmoFile: String):List[WeatherStation] =
@@ -24,7 +30,12 @@ object WeatherDataSimulator {
      
    weatherstations
   }
-  
+  /**
+   * generates the weather data for list of stations
+   * step1:  Geography Data( latitude, longitude, elevation, timezone) is extracted from a remoted file/api
+   * step2:  Atmosphere Data is generated based on possbiel range of those values (eg: humidity 0-100 )
+   * Step3 : All the data is aggregated and the model data is created
+   */
   def generateWeatherData(weatherStations :List[WeatherStation]):  List[String]=
   {
    logger.debug("WeatherDataSimulator.generateWeatherData started")

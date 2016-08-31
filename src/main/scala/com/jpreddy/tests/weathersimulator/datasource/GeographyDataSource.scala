@@ -2,6 +2,10 @@ package com.jpreddy.tests.weathersimulator.datasource
 
 import com.jpreddy.tests.weathersimulator.CommonDefs._
 
+/**
+ * Remote data sources (Geography) and the way to fetch data from them is 
+ * encapsulated here.
+ */
 object GeographyDataSource extends DataSource {
 
 

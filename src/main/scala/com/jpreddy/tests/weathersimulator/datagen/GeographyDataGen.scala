@@ -8,9 +8,18 @@ import com.jpreddy.tests.weathersimulator.datamodel._
 import com.jpreddy.tests.weathersimulator.utils._
 import com.jpreddy.tests.weathersimulator.utils.TransformationUtil._
 
+/**
+ * This class is responsible for generating geography data such as LATITUDE, LONGITUDE, ELEVATION 
+ * data is not generated but the actual data is fetched from remote location.
+ * As this remote file contains whole lot of other data, only selective data is extracted.
+ */
+
 object GeographyDataGen {
   
-  
+  /**
+   * GeographyModel  object is created for the  WeatherStation  by parsing the data from a remote file
+   * 
+   */
   def fetchGeographyData(weatherStations: List[WeatherStation]): List[(WeatherStation, GeographyModel)] =
   {
     GeographyDataSource.fetchMLIDMappingFile
@@ -46,6 +55,9 @@ object GeographyDataGen {
     geographyModel
    }
   
+  /**
+   * Elevation data for GEO coordinates is fetched separately from another source
+   */
    def fetchElevation(lat:String, lon: String) ={
      
    //FETCH ELEVATION 

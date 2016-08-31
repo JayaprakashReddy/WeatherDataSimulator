@@ -6,7 +6,10 @@ import com.jpreddy.tests.weathersimulator.datamodel._
 import com.jpreddy.tests.weathersimulator.datamodel.WeatherElementModel._
 import com.jpreddy.tests.weathersimulator.datagen._
 import com.jpreddy.tests.weathersimulator.utils.TransformationUtil._
-
+/**
+ * This class is responsible for generating atmosphere data such as TEMPERATURE, PRESSURE, HUMIDITY 
+ * 
+ */
 object AtmosphereDataGen {
   
   def generateAtmosphereModel( WeatherStations_GeographyModel: List[(WeatherStation, GeographyModel)])={
@@ -23,7 +26,11 @@ object AtmosphereDataGen {
     val weatherCondition =generateWeatherCondition(temperature, pressure, humidity)
     AtmosphereModel(temperature,pressure,humidity, weatherCondition)
   }
-  
+  /**
+   * Global maximum and minimum values are noted down
+   * and the value in the min-max range is generated randomly.
+   * Timezone is taken into consideration not to skew the data much from reality
+   */
   def generateTemperature(geoModel : GeographyModel) :String=
   {
     //generate random number between max and min  temperatures noted on earth
@@ -38,6 +45,11 @@ object AtmosphereDataGen {
     roundAt1(tempNew.toFloat).toString
   }
   
+  /**
+   * Global maximum and minimum values are noted down
+   * and the value in the min-max range is generated randomly.
+   * Timezone is taken into consideration not to skew the data much from reality
+   */
   def generatePressure(geoModel : GeographyModel) :String=
   {
     //generate random number between max and min  temperatures noted on earth
@@ -51,6 +63,12 @@ object AtmosphereDataGen {
     roundAt1(valNew.toFloat).toString
   }
   
+  /**
+   * Global maximum and minimum values are noted down
+   * and the value in the min-max range is generated randomly.
+   * Timezone is taken into consideration not to skew the data much from reality
+   */
+  
   def generateHumidity(geoModel : GeographyModel) :String=
   {
     //generate random number between max and min  temperatures noted on earth
@@ -63,6 +81,12 @@ object AtmosphereDataGen {
     valNew.round.toString
   }
   
+ /**
+  *  WeatherCondition is calculated from atmosphere elements (Temperature Pressure, Humidity)
+  *  Humidty  >= 55 && < 100 is assumed to cause 'Rain'
+  *  And with such condition if temperature is in freezing level, it assumed to 'Snow'
+  *  Otherwise 'Sunny'
+  */
   def generateWeatherCondition(temperature:String, pressure:String, humidity:String):String =
   {
     logger.debug(s"temperature=$temperature, pressure=$pressure, humidity=$humidity")
