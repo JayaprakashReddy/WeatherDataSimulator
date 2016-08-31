@@ -1,7 +1,8 @@
 #WeatherDataSimulator
 <p>This is weather data creation application.<br>
 At the moment geography data is aggregated using apis and remote sources consists of : LATITUDE, LONGITUDE, ELEVATION. <br>
-And weather data generated consists of: TEMPERATURE, PRESSURE, HUMIDITY <br>
+And atmosphere data generated consists of: TEMPERATURE, PRESSURE, HUMIDITY <br>
+Weather condition is derived from the atmosphere elements.<br>
 </p>
 
 ###Input to the applications is at this location:
